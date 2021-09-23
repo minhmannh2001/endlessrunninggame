@@ -16,7 +16,11 @@ setInterval(function() {
     if (-75 <= location && location <= 25) {
         if (!player.classList.contains("jump")) {
             bite();
-            document.querySelector(".game").classList.add("stopAnimation");
+            document.querySelector(".background1").classList.add("stopAnimation");
+            document.querySelector(".background2").classList.add("stopAnimation");
+            document.querySelector(".background3").classList.add("stopAnimation");
+            document.querySelector(".background4").classList.add("stopAnimation");
+            document.querySelector(".background5").classList.add("stopAnimation");
             document.querySelector(".menu").classList.remove("d-none");
         }
     }

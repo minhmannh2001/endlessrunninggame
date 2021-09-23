@@ -1,16 +1,89 @@
 .game {
-    background-image: url("assets/background/5.png"), 
+    /* background-image: url("assets/background/5.png"), 
     url("assets/background/4.png"), 
     url("assets/background/3.png"), 
     url("assets/background/2.png"), 
-    url("assets/background/1.png");
+    url("assets/background/1.png"); */
     background-size: 829px 467px;
     width: 829px;
     height: 467px;
     box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.37);
-    border: 2px solid black !important;
+    /* border: 2px solid black !important; */
     overflow: hidden;
-    animation: animatedBackground 10s linear infinite; 
+    /* animation: animatedBackground 10s linear infinite;  */
+    position: relative;
+}
+
+.background5 {
+    background-color:transparent;
+    background-image: url("assets/background/5.png");
+    background-size: contain;
+    z-index: 5;
+    width: 829px; 
+    height: 467px; 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: animatedBackground 4s linear infinite;
+    border-radius: 4px;
+    border: 2px solid black !important; 
+}
+
+.background4 {
+    background-color:transparent;
+    background-image: url("assets/background/4.png");
+    background-size: contain;
+    z-index: 4;
+    width: 829px; 
+    height: 467px; 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: animatedBackground 5s linear infinite;
+}
+
+.background3 {
+    background-color:transparent;
+    background-image: url("assets/background/3.png");
+    background-size: contain;
+    z-index: 3;
+    width: 829px; 
+    height: 467px; 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: animatedBackground 6s linear infinite;
+}
+
+.background2 {
+    background-color:transparent;
+    background-image: url("assets/background/2.png");
+    background-size: contain;
+    z-index: 2;
+    width: 829px; 
+    height: 467px; 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: animatedBackground 8s linear infinite;
+}
+
+.background1 {
+    background-color:transparent;
+    background-image: url("assets/background/1.png");
+    background-size: contain;
+    z-index: 1;
+    width: 829px; 
+    height: 467px; 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: animatedBackground 10s linear infinite;
 }
 
 .stopAnimation {
@@ -25,7 +98,7 @@
     background-size: 90px 90px;
     width: 90px;
     height: 90px;
-    z-index: 1;
+    z-index: 10;
     animation: playerRunning 0.3s linear 0.06s infinite normal both;
 }
 
@@ -92,6 +165,7 @@
     height: 90px;
     z-index: 1;
     animation: playerDie 1.6s linear 0.06s 1 normal both;
+    z-index: 10;
 }
 
 @keyframes playerDie {
@@ -123,7 +197,7 @@
     background-size: 60px 60px;
     width: 60px;
     height: 60px;
-    z-index: 1;
+    z-index: 10;
     animation: dogRunning 0.2s linear 0.04s infinite normal both, dogMoving 3s linear 0s infinite;
 }
 
@@ -135,7 +209,7 @@
     background-size: 60px 60px;
     width: 60px;
     height: 60px;
-    z-index: 1;
+    z-index: 10;
     animation: dog2Running 0.2s linear 0.04s infinite normal both, dogMoving 3s linear 0s infinite;
 }
 
@@ -198,7 +272,7 @@
     background-size: 60px 60px;
     width: 60px;
     height: 60px;
-    z-index: 1;
+    z-index: 10;
     animation: dogBite 0.4s linear 0s 4 normal none;
 }
 
@@ -225,7 +299,7 @@
     background-size: 60px 60px;
     width: 60px;
     height: 60px;
-    z-index: 1;
+    z-index: 10;
     animation: dog2Bite 0.4s linear 0s 4 normal none;
 }
 
@@ -248,6 +322,7 @@
     position: absolute;
     top: calc(50% - 48px);
     left: calc(50% - 121px);
+    z-index: 10;
 }
 
 .replay-btn:hover {
@@ -257,11 +332,20 @@
     cursor: pointer;
 }
 
-@keyframes animatedBackground { 
+/* @keyframes animatedBackground { 
     from { 
         background-position: 0 0; 
     } 
     to { 
         background-position: 20790% 0; 
     } 
+} */
+
+@keyframes animatedBackground {
+    from {
+      background-position: 0 0; 
+    }
+    to {
+      background-position: -412500% 0;
+    }
 }
