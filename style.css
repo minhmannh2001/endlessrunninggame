@@ -1,0 +1,267 @@
+.game {
+    background-image: url("assets/background/5.png"), 
+    url("assets/background/4.png"), 
+    url("assets/background/3.png"), 
+    url("assets/background/2.png"), 
+    url("assets/background/1.png");
+    background-size: 829px 467px;
+    width: 829px;
+    height: 467px;
+    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.37);
+    border: 2px solid black !important;
+    overflow: hidden;
+    animation: animatedBackground 10s linear infinite; 
+}
+
+.stopAnimation {
+    animation-play-state: paused;
+}
+
+.player {
+    background-image: url("assets/maincharacter/tile000.png");
+    position: relative;
+    top: 348px;
+    left: 70px;
+    background-size: 90px 90px;
+    width: 90px;
+    height: 90px;
+    z-index: 1;
+    animation: playerRunning 0.3s linear 0.06s infinite normal both;
+}
+
+.jump {
+    animation: playerJump 0.6s linear 0s 1 normal forwards, jumpMoving 0.8s linear;
+}
+
+@keyframes playerRunning {
+    0% {
+        background-image: url("assets/maincharacter/tile000.png");
+    }
+    20% {
+        background-image: url("assets/maincharacter/tile001.png");
+    }
+    40% {
+        background-image: url("assets/maincharacter/tile002.png");
+    }
+    60% {
+        background-image: url("assets/maincharacter/tile003.png");
+    }
+    80%{
+        background-image: url("assets/maincharacter/tile004.png");
+    }
+    100%{
+        background-image: url("assets/maincharacter/tile005.png");
+    }
+}
+
+@keyframes playerJump {
+    0% {
+        background-image: url("assets/maincharacter/jump/tile000.png");
+    }
+    33% {
+        background-image: url("assets/maincharacter/jump/tile001.png");
+    }
+    66% {
+        background-image: url("assets/maincharacter/jump/tile002.png");
+    }
+    100% {
+        background-image: url("assets/maincharacter/jump/tile003.png");
+    }
+}
+
+@keyframes jumpMoving {
+    0% {
+        top: 348px;
+    }
+    50%
+    {
+        top: 288px;
+    }   
+    100% {
+        top: 348px;
+    }
+}
+
+.playerDie {
+    background-image: url("assets/maincharacter/death/tile000.png");
+    position: relative;
+    top: 348px;
+    left: 70px;
+    background-size: 90px 90px;
+    width: 90px;
+    height: 90px;
+    z-index: 1;
+    animation: playerDie 1.6s linear 0.06s 1 normal both;
+}
+
+@keyframes playerDie {
+    0% {
+        background-image: url("assets/maincharacter/death/tile000.png");
+    }
+    20% {
+        background-image: url("assets/maincharacter/death/tile001.png");
+    }
+    40% {
+        background-image: url("assets/maincharacter/death/tile002.png");
+    }
+    60% {
+        background-image: url("assets/maincharacter/death/tile003.png");
+    }
+    80%{
+        background-image: url("assets/maincharacter/death/tile004.png");
+    }
+    100%{
+        background-image: url("assets/maincharacter/death/tile005.png");
+    }
+}
+
+.dog {
+    background-image: url("assets/enemies/dog/tile000.png");
+    position: relative;
+    top: 348px;
+    left: 730px;
+    background-size: 60px 60px;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+    animation: dogRunning 0.2s linear 0.04s infinite normal both, dogMoving 3s linear 0s infinite;
+}
+
+.dog2 {
+    background-image: url("assets/enemies/dog2/tile000.png");
+    position: relative;
+    top: 348px;
+    left: 730px;
+    background-size: 60px 60px;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+    animation: dog2Running 0.2s linear 0.04s infinite normal both, dogMoving 3s linear 0s infinite;
+}
+
+@keyframes dogRunning {
+    0% {
+        background-image: url("assets/enemies/dog/tile000.png");
+    }
+    20% {
+        background-image: url("assets/enemies/dog/tile001.png");
+    }
+    40% {
+        background-image: url("assets/enemies/dog/tile002.png");
+    }
+    60% {
+        background-image: url("assets/enemies/dog/tile003.png");
+    }
+    80%{
+        background-image: url("assets/enemies/dog/tile004.png");
+    }
+    100%{
+        background-image: url("assets/enemies/dog/tile005.png");
+    }
+}
+
+@keyframes dog2Running {
+    0% {
+        background-image: url("assets/enemies/dog2/tile000.png");
+    }
+    20% {
+        background-image: url("assets/enemies/dog2/tile001.png");
+    }
+    40% {
+        background-image: url("assets/enemies/dog2/tile002.png");
+    }
+    60% {
+        background-image: url("assets/enemies/dog2/tile003.png");
+    }
+    80%{
+        background-image: url("assets/enemies/dog2/tile004.png");
+    }
+    100%{
+        background-image: url("assets/enemies/dog2/tile005.png");
+    }
+}
+
+@keyframes dogMoving {
+    from {
+        left: 730px;
+    }
+    to {
+        left: -200px;
+    }
+}
+
+.dogBite {
+    background-image: url("assets/enemies/dog/bite/tile000.png");
+    position: relative;
+    top: 348px;
+    left: 20px;
+    background-size: 60px 60px;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+    animation: dogBite 0.4s linear 0s 4 normal none;
+}
+
+@keyframes dogBite {
+    0% {
+        background-image: url("assets/enemies/dog/bite/tile000.png");
+    }
+    33% {
+        background-image: url("assets/enemies/dog/bite/tile001.png");
+    }
+    66% {
+        background-image: url("assets/enemies/dog/bite/tile002.png");
+    }
+    100% {
+        background-image: url("assets/enemies/dog/bite/tile003.png");
+    }
+}
+
+.dog2Bite {
+    background-image: url("assets/enemies/dog2/bite/tile000.png");
+    position: relative;
+    top: 348px;
+    left: 20px;
+    background-size: 60px 60px;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+    animation: dog2Bite 0.4s linear 0s 4 normal none;
+}
+
+@keyframes dog2Bite {
+    0% {
+        background-image: url("assets/enemies/dog2/bite/tile000.png");
+    }
+    33% {
+        background-image: url("assets/enemies/dog2/bite/tile001.png");
+    }
+    66% {
+        background-image: url("assets/enemies/dog2/bite/tile002.png");
+    }
+    100% {
+        background-image: url("assets/enemies/dog2/bite/tile003.png");
+    }
+}
+
+.menu {
+    position: absolute;
+    top: calc(50% - 48px);
+    left: calc(50% - 121px);
+}
+
+.replay-btn:hover {
+    transition: all 0.3s linear;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+}
+
+@keyframes animatedBackground { 
+    from { 
+        background-position: 0 0; 
+    } 
+    to { 
+        background-position: 20790% 0; 
+    } 
+}
