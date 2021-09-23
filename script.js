@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector(".highScore").innerHTML = `High Score: ${highScore}`;
 });
 
-document.addEventListener("keydown", function(){
-    if (!player.classList.contains("jump")) {
+document.addEventListener("keydown", function(event){
+    if (!player.classList.contains("jump") && (event.keyCode == 32 || event.keyCode == 38)) {
         player.classList.add("jump");
         setTimeout(function() {
             player.classList.remove("jump"); 
