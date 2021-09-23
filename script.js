@@ -1,6 +1,18 @@
 var player = document.getElementById("player");
 var enemy = document.getElementById("enemy");
 
+var highScore = 0;
+var score = 0;
+
+if (!localStorage.getItem("highScore")) {
+    highScore = localStorage.setItem('highScore', 0);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    highScore = localStorage.getItem('highScore');
+    document.querySelector(".highScore").innerHTML = `High Score: ${highScore}`;
+});
+
 document.addEventListener("keydown", function(){
     if (!player.classList.contains("jump")) {
         player.classList.add("jump");
@@ -10,9 +22,12 @@ document.addEventListener("keydown", function(){
     }
 });
 
+var isIncreased = false;
+
 setInterval(function() {
     var enemyCssObj = window.getComputedStyle(enemy);
     var location = parseInt(enemyCssObj.getPropertyValue("left"));
+
     if (-75 <= location && location <= 25) {
         if (!player.classList.contains("jump")) {
             bite();
@@ -22,7 +37,20 @@ setInterval(function() {
             document.querySelector(".background4").classList.add("stopAnimation");
             document.querySelector(".background5").classList.add("stopAnimation");
             document.querySelector(".menu").classList.remove("d-none");
+            if (highScore > localStorage.getItem('highScore')) {
+                document.querySelector(".highScore").innerHTML = `High Score: ${highScore}`;
+                localStorage.setItem('highScore', highScore); 
+            }
+        } else if (isIncreased === false) {
+            score += 1;
+            document.querySelector(".score").innerHTML = `Score: ${score}`;
+            if (score > highScore) {
+                highScore = score;
+            }
+            isIncreased = true;
         }
+    } else {
+        isIncreased = false;
     }
 }, 10);
 
